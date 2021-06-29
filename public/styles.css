@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
     body{
       max-width: 1200px;
       margin: 20px auto;
@@ -6,13 +8,21 @@
       font-family: 'Noto Serif', serif;
       max-width: 1200px;
     }
-    p, h1, h2, h3, a, ul{
+    
+    p, h1, h2, h3, h4, ul, li, a, p, input, label, button, div, footer{
       margin: 0;
       padding: 0;
-      text-decoration: none;
-      color: #222;
+      font-family: 'Quicksand', sans-serif;
+      color: #444;
     }
 
+    
+    ul{
+      list-style-type: none;
+    }
+    a{
+      text-decoration: none;
+    }
     /* nav & footer styles */
     nav{
       display: flex;
@@ -38,11 +48,15 @@
       color: #777;
       font-weight: 300;
     }
-    footer{
-      color: #777;
-      text-align: center;
-      margin: 80px auto 20px;
+    nav li a{
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 0.8em;
+      display: block;
+      padding: 10px 16px;
+      letter-spacing: 2px;
     }
+    
     h2{
       margin-bottom: 40px;
     }
@@ -75,6 +89,7 @@
       right: 0;
       border-radius: 50%;
       padding: 8px;
+      background-color: #FEE996 ;
     }
     .delete:hover{
       cursor: pointer;
@@ -82,14 +97,16 @@
     }
 
     /* create styles */
-    .create-note form{
-      max-width: 400px;
-      margin: 0 auto;
+    .create-note input {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 8px;
     }
-    .create-note input,
     .create-note textarea{
       display: block;
       width: 100%;
+      height: 80%;
       margin: 10px 0;
       padding: 8px;
     }
@@ -97,92 +114,24 @@
       display: block;
       margin-top: 24px;
     }
-    textarea{
-      height: 120px;
-    }
-    .create-note button{
-      margin-top: 20px;
-      background: lightseagreen;
-      color: white;
-      padding: 6px;
-      border: 0;
-      font-size: 1.2em;
-      cursor: pointer;
+    button{
+      margin-top: 30px;
+      border-radius: 36px;
+      background: #FEE996;
+      border:0;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 0.8em;
+      display: block;
+      padding: 10px 16px;
+      letter-spacing: 2px;
     }
 
     .main {
-      height: 60vh;
-      width: 60vw;
-      
+      height: 55vh;
+      width: 55vw;
     }
 
-    .input-box {
-      height: 20vh;
-      width: 100vw;
-    }
-
-
-    /*  */
-    /*   */
-    /* google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-
-body{
-  margin: 20px 40px;
-  font-size: 1.2rem;
-  letter-spacing: 1px;
-  background: #fafafa;
-}
-h1, h2, h3, h4, ul, li, a, p, input, label, button, div, footer{
-  margin: 0;
-  padding: 0;
-  font-family: 'Quicksand', sans-serif;
-  color: #444;
-}
-ul{
-  list-style-type: none;
-}
-a{
-  text-decoration: none;
-}
-nav{
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 120px;
-}
-nav ul{
-  display: flex;
-  align-items: center;
-}
-nav li{
-  margin-left: 20px;
-}
-nav li a{
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 0.8em;
-  display: block;
-  padding: 10px 16px;
-  letter-spacing: 2px;
-}
-.btn{
-  border-radius: 36px;
-  background: #FEE996;
-}
-form h2{
-  font-size: 2.4em;
-  font-weight: 900;
-  margin-bottom: 40px;
-}
-form{
-  width: 360px;
-  margin: 0 auto;
-  padding: 30px;
-  box-shadow: 1px 2px 3px rgba(0,0,0,0.1);
-  border-radius: 10px;
-  background: white;
-}
 input{
   padding: 10px 12px;
   border-radius: 4px;
@@ -194,70 +143,23 @@ label{
   display: block;
   margin: 20px 0 10px;
 }
-button{
-  margin-top: 30px;
-  border-radius: 36px;
-  background: #FEE996;
-  border:0;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 0.8em;
-  display: block;
-  padding: 10px 16px;
-  letter-spacing: 2px;
-}
+
 .error{
   color: #ff0099;
   margin: 10px 2px;
   font-size: 0.8em;
   font-weight: bold;
 }
-header{
-  display: flex;
-  align-items: center;
-}
-header img{
-  width: 250px;
-  margin-right: 40px;
-}
-header h2{
-  font-size: 3em;
-  margin-bottom: 10px;
-}
-header h3{
-  font-size: 1.6em;
-  margin-bottom: 10px;
-  margin-left: 2px;
-  color: #999;
-}
-header .btn{
-  margin-top: 20px;
-  padding: 12px 18px;
-  text-transform: uppercase;
-  font-weight: bold;
-  display: inline-block;
-  font-size: 0.8em;
-}
-.recipes{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 30px;
-  row-gap: 80px;
-  margin: 80PX AUTO;
-  max-width: 1200px;
-}
+
 .recipe{
   display: inline-block;
   border-radius: 20px;
-  background: white;
+  background: #f2f2f2;
   position: relative;
   text-align: center;
   padding: 0 20px 30px 20px
 }
-.recipe img{
-  width: 100px;
-  margin: -30px auto 20px;
-}
+
 footer{
   text-align: center;
   margin-top: 120px;
