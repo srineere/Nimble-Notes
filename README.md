@@ -10,7 +10,7 @@ The Nimble notes app is a basic notes saving web application :
 
 <a href="https://the-example-app-nodejs.herokuapp.com/" target="_blank"><img src="https://i.ibb.co/r58pdK5/sc.png" alt="Screenshot of the example app"/></a>
 
-You can see a hosted version of `The nimble notes app` on <a href="https://nimble-notes.herokuapp.com/" target="_blank">Heroku</a>. (coming soon)
+You can see a hosted version of `The nimble notes app` on <a href="https://nimble-notes.herokuapp.com/" target="_blank">Heroku</a>. 
 
 ## Setup
 
