@@ -12,11 +12,12 @@ const app = express();
 const dbURI = 'mongodb://test-user:test-password@nimblenotes-shard-00-00.mihom.mongodb.net:27017,nimblenotes-shard-00-01.mihom.mongodb.net:27017,nimblenotes-shard-00-02.mihom.mongodb.net:27017/NimbleNotes?ssl=true&replicaSet=atlas-12r9m5-shard-0&authSource=admin&retryWrites=true&w=majority';
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
     .then(result => {
-      const port = Process.env.PORT || 3000
-        app.listen(port,()=>{  // do not add localhost here if you are deploying it
-          console.log("server listening to port "+port);
-      });
-
+        app.listen(process.env.PORT || 3000);
+        console.log('server started')
+      //   const port = Process.env.PORT || 3000
+      //   app.listen(port,()=>{  // do not add localhost here if you are deploying it
+      //     console.log("server listening to port "+port);
+      // });
     })  // listening
     .catch(err => console.log(err));
 
