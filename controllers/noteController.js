@@ -38,6 +38,33 @@ const note_create_post = (req, res) => {
     });
 }
 
+const note_update_get = (req,res) => {
+  const id = req.params.id;
+  Note.findById(id)
+    .then(result => {
+      res.render('update', { note: result, title: 'Update a Note' });
+    })
+    .catch(err => {
+      console.log(err);
+      res.render('404', { title: 'Note not found' });
+    });
+}
+
+const note_update_post = (req, res) => {
+  const id = req.params.id; 
+  const note = new Note(req.body);
+  const text = note.body
+  // console.log(id,text)
+  Note.findByIdAndUpdate(id, {body: text}, {useFindAndModify: false})
+  .then(result => {
+    res.redirect('/notes/'+id);
+  })
+  .catch(err => {
+    res.status(500)
+    console.log(err)
+  })
+}
+
 const note_delete = (req, res) => {
   const id = req.params.id;
   Note.findByIdAndDelete(id)
@@ -53,6 +80,8 @@ module.exports = {
   note_index, 
   note_details, 
   note_create_get, 
-  note_create_post, 
+  note_create_post,
+  note_update_get,
+  note_update_post, 
   note_delete
 }
